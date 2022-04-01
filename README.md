@@ -34,7 +34,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app!
+- [x] List anything else that you can get done to improve the app!
 - The button could change the location each run. The user could click the button by its color.
 - User could test the button with the sound to sure that he click the right button. Thus, we could set up a attpempt time for user to try. When the game gets more complex and have more buttons.
 
@@ -44,7 +44,7 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 
 <img src = "http://g.recordit.co/oKo6Sr8WWL.gif" alt = " speed change and stop,start button" width="250"><br>
 <img src = "http://g.recordit.co/7hqy5oBAED.gif" alt = " game lose and 3 attempts" width="250"><br>
-<img src = "http://g.recordit.co/zKN7JXKAeq.gif" alt = " game win" width="250"><br>
+<img src = "http://g.recordit.co/wpOGcMBS0k.gif" alt = " game win" width="250"><br>
 
 
 ## Reflection Questions
