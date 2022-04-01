@@ -3,8 +3,9 @@ const cluePauseTime = 333;
 const nextClueWaitTime = 1000;
 //Global Variables
 
-var pattern = [2, 3, 4, 2, 3, 4, 4];
+var pattern = [Math.floor(Math.random()*5)+1, Math.floor(Math.random()*5)+1, Math.floor(Math.random()*5)+1, Math.floor(Math.random()*5)+1, Math.floor(Math.random()*5)+1, Math.floor(Math.random()*5)+1, Math.floor(Math.random()*5)+1];
 var progress = 0;
+var numberofMiss = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;
@@ -12,6 +13,7 @@ var guessCounter = 0;
 
 function startGame(){
   progress = 0;
+  numberofMiss = 0;
   gamePlaying = true;
   
   document.getElementById("startBtn").classList.add("hidden");
@@ -27,10 +29,11 @@ function stopGame(){
 }
 
 const freqMap = {
-  1: 261.6,
-  2: 329.6,
-  3: 392,
-  4: 466.2
+  1: 100.6,
+  2: 500.6,
+  3: 200,
+  4: 344.2,
+  5: 666
 }
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
@@ -88,7 +91,7 @@ function playClueSequence(){
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
-    delay += clueHoldTime 
+    delay += clueHoldTime - 1000; 
     delay += cluePauseTime;
   }
 }
@@ -111,6 +114,7 @@ function guess(btn){
  if(pattern[guessCounter] == btn){
     if(guessCounter == progress){
       if(progress == pattern.length - 1){
+        winGame();
       }else{
         progress++;
         playClueSequence();
@@ -118,8 +122,10 @@ function guess(btn){
     }else{
       guessCounter++;
     }
+  }else if (numberofMiss < 3){
+    numberofMiss ++;
+    return
   }else{
-
     loseGame();
   }
 } 

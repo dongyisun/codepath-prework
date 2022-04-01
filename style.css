@@ -34,6 +34,10 @@ h1{
 button{
   padding: 10px;
   border-radius: 10px;
+  background-color:#0a0a23;
+  color: #fff;
+  border:none;
+  border-radius:10px;
 }
 
 .hidden{
@@ -62,6 +66,9 @@ button{
   background:lightyellow;
 }
 
+#button5{
+  background:black;
+}
 
 #button1:active, #button1.lit{
   background: green;
@@ -77,4 +84,8 @@ button{
 
 #button4:active,#button4.lit{
   background: yellow;
+}
+
+#button5:active,#button5.lit{
+  background: white;
 }
